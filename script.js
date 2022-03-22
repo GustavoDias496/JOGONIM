@@ -62,8 +62,8 @@ var runWinSequence = function() {
     } else {
       var playerName = $('#player-two').text();
     }
+
   
-  // fade out remaining game piece so winner can be displayed
   setTimeout(function () {
     $('.item').fadeOut(500);
     setTimeout(function() {
@@ -88,7 +88,8 @@ var runWinSequence = function() {
 // this function reviews the game board and determines quantity and heap to draw from
 var aiComputeMove = function() {
   var heapArray = [];    // array of numbers existing in each heap
-  var itemsToRemove = {  // stores the number of items to remove from a heap
+  var itemsToRemove = {  
+    
     "heap-index": null,
     "quantity": null
   };
@@ -97,7 +98,7 @@ var aiComputeMove = function() {
       heapArray.push(heapObj[heap]);
   }
 
-  // check how many piles are greater than 1 (to see if you can reduce to odd number of 1-piles)
+  
   var largeHeap = 0;
   for(let i = 0; i < heapArray.length; i++) {
     if(heapArray[i] > 1) {
