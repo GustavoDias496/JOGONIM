@@ -1,4 +1,4 @@
-var aiMode = false;         // whether computer mode is enabled
+var aiMode = false;         
 var player = 1;             
 var itemRemoved = false;
 var selectedHeap = null; 
@@ -81,9 +81,8 @@ var runWinSequence = function() {
   }, 1000);
 };
 
-// this function reviews the game board and determines quantity and heap to draw from
 var aiComputeMove = function() {
-  var heapArray = [];    // array of numbers existing in each heap
+  var heapArray = [];    
   var itemsToRemove = {  
     
     "heap-index": null,
@@ -94,7 +93,6 @@ var aiComputeMove = function() {
       heapArray.push(heapObj[heap]);
   }
 
-  
   var largeHeap = 0;
   for(let i = 0; i < heapArray.length; i++) {
     if(heapArray[i] > 1) {
@@ -102,16 +100,15 @@ var aiComputeMove = function() {
     }
   }
 
-  // if there is only one heap to reduce down to 1
   if(largeHeap <= 1) {
-    //get number of piles greater than 0
+
     var numHeaps = 0;
     for(let i = 0; i < heapArray.length; i++) {
       if(heapArray[i] > 0) {
         numHeaps++;
       }
     }
-    // determine if number of piles remaining is odd
+
     var maxHeap = Math.max(...heapArray);
     var maxHeapIndex = heapArray.indexOf(maxHeap);
     itemsToRemove["heap-index"] = maxHeapIndex;
@@ -158,28 +155,26 @@ var aiComputeMove = function() {
   return itemsToRemove;
 }
 
-
-
 var aiPlayTurn = function() {
   
-  // local version of heapObj but always contains max size of each heap
+
   var maxHeaps = { "heap-one": 3,
                    "heap-two": 5,
                    "heap-three": 7
   };
 
-  // associated with each item id attribute from index.html
+
   var itemIds = { "heap-one": ["h1-1", "h1-2", "h1-3"],
                   "heap-two": ["h2-1", "h2-2", "h2-3", "h2-4", "h2-5"],
                   "heap-three": ["h3-1", "h3-2", "h3-3", "h3-4", "h3-5", "h3-6", "h3-7"]
                 };
 
-  // function returns object with the heap to pull from, and how many to pull
+
   var itemsToRemove = aiComputeMove();
   console.log("Computer will remove: ", itemsToRemove);
 
 
-  // get the name of the heap to match the class of the divs in html
+  
   var heapKeys = Object.keys(heapObj);
   var heapName = heapKeys[itemsToRemove["heap-index"]];
 
@@ -190,7 +185,7 @@ var aiPlayTurn = function() {
 
   var idString = '';
 
-  // remove correct quantity of children
+  
   while(quantityRemoved < quantityToRemove) {
     
     idString = "#" + itemIds[heapName][itr];
@@ -200,8 +195,7 @@ var aiPlayTurn = function() {
       $(idString).triggerHandler("click");
       quantityRemoved++;
     }
-    // if you reach end of the heap, loop back to beginning
-    // this handles case where someone pulls from the middle
+
     if(itr > maxHeaps[heapName]) {
       itr = 0;
     }
@@ -213,7 +207,7 @@ var aiPlayTurn = function() {
     heapSum += heapObj[heap];
   }
 
-  // switch player button when computer is done taking turn
+
   if(!gameOver) {
     player = 1;
     $('#player-two').addClass('disabled');
@@ -229,7 +223,7 @@ var switchPlayer = function() {
   if(!itemRemoved) {
     M.toast({html: 'Você precisa remover pelo menos um item!', classes: 'rounded'});
   } else {
-    // var heapSum = 0;
+
 
     if(!gameOver) {
       if(player === 1) {
@@ -244,10 +238,10 @@ var switchPlayer = function() {
     }
   }
 
-  // reset move boolean for next player to choose from any heap
+
   itemRemoved = false;
 
-  // timeout makes the computer take a second to play its turn
+
   setTimeout(function() {
     if(aiMode && player === 2 && !gameOver) {
       aiPlayTurn();
@@ -257,10 +251,10 @@ var switchPlayer = function() {
 };
 
 var removeItem = function() {
-  // dismiss toast messages so they don't stack up on screen
+
   M.Toast.dismissAll();
 
-  // store heap of player's first clicked object
+
   if(!itemRemoved) {
     selectedHeap = $(this).parent().attr('id');
     itemRemoved = true;
