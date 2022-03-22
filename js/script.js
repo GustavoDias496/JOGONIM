@@ -72,7 +72,6 @@ var runWinSequence = function() {
       if(player === 1 || player === 2 && aiMode === false) {
         $('.heap-two').append("<h3 class='win-msg'>" + playerName + " Ganhou!!</h3>");
       } else {
-        $('.heap-one').append("<img src='img/ai-brain.png' class='brain responsive-img'>");
         $('.heap-two').append("<h3 class='win-msg'>Não foi dessa vez... O computador ganhou!</h3>");
       }
       $('.heap-one').fadeIn("slow") 
