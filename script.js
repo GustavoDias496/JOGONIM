@@ -260,7 +260,7 @@ var removeItem = function() {
     itemRemoved = true;
     
     if(!aiMode || aiMode && player !== 2) {
-      // display reminder to tap your name to switch players
+
       reminderTimeout = setTimeout(function() {
         $('.reminder-msg').fadeIn(1000);
         setTimeout(function() {
@@ -270,7 +270,7 @@ var removeItem = function() {
     }
   }
 
-  // valid move if choosing an item from the same heap
+
   if($(this).parent().attr('id') === selectedHeap) {
     console.log(heapObj[selectedHeap]);
     heapObj[selectedHeap]--;
@@ -282,28 +282,25 @@ var removeItem = function() {
     }
     console.log("heapSum =", heapSum);
 
-    // if one remaining piece, we have a winner
+
     if(heapSum === 1 && !gameOver) {
       gameOver = true;
       runWinSequence();
     }
 
-    // if the heap is emptied, auto switch the player
-    // if(heapObj[selectedHeap] === 0){
-    //   switchPlayer();
-    // } 
+
   } else {
-    // case where user selects an item from a second heap during a turn
+
     M.toast({html: 'You may only remove items from one heap!', classes: 'rounded'});
   }
 };
 
 $(document).ready(function() {
   $('.reminder-msg').hide();
-  // initialize and open the modal on page load
+
   $('.modal').modal({'opacity': 0.75});
   
-  // event listener for game mode buttons
+
   $(".game-mode").on("click", function() {
     if($(this).hasClass("two-player")) {
       $(this).css("border","2px solid black");
@@ -322,21 +319,21 @@ $(document).ready(function() {
   
   $('.modal').modal('open');
 
-  // initialize the game with options selected by user in modal
+
   $("a.modal-close").on("click", initGame);
 
-  // remove an item when it is clicked on
+
   $(".item").on("click", removeItem);
   
-  // reset the gameboard
+
   $(".reset").on("click", resetGame);
 
-  // switch the current player
+
   $(".switch-player").on("click", switchPlayer);
 
-  // pop ups on hover over buttons
+
   $('.tooltipped').tooltip();
 
-  // Materialize command to create pop-out menu in small size
+
   $('.sidenav').sidenav();
 });
