@@ -3,8 +3,9 @@ var player = 1;             // tracks current player (1 or 2...2 is also compute
 var itemRemoved = false;    // tracks whether player has made an initial move
 var selectedHeap = null; 
 var reminderTimeout = null; // timeout handler to clear when player switches
-var gameOver = false;       // changes on win conditions
-var heapObj = {             // stores item quantity in each heap
+var gameOver = false;       
+var heapObj = {             
+  
   "heap-one": 3,
   "heap-two": 5,
   "heap-three": 7
