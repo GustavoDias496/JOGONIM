@@ -11,7 +11,7 @@ var heapObj = {             // stores item quantity in each heap
 };
 
 var initGame = function() {
-  // display the player names, or defaults to Player 1, Player 2
+
   if($("input[name='player-one']").val()) {
     var playerOneName = $("input[name='player-one']").val();
     $('#player-one').text(playerOneName);
@@ -28,7 +28,8 @@ var initGame = function() {
 };
 
 var resetGame = function() {
-  // remove the win message from previous game
+
+  
   $('h3').remove();
   $('.brain').remove();
   $('.item').show();
