@@ -162,7 +162,8 @@ var aiComputeMove = function() {
   return itemsToRemove;
 }
 
-// this function calls the aiComputeMove and then plays the calculated moves
+
+
 var aiPlayTurn = function() {
   
   // local version of heapObj but always contains max size of each heap
