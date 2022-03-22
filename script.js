@@ -1,7 +1,7 @@
 var aiMode = false;         // whether computer mode is enabled
 var player = 1;             // tracks current player (1 or 2...2 is also computer)
 var itemRemoved = false;    // tracks whether player has made an initial move
-var selectedHeap = null;    // tracks which heap the computer should choose from
+var selectedHeap = null; 
 var reminderTimeout = null; // timeout handler to clear when player switches
 var gameOver = false;       // changes on win conditions
 var heapObj = {             // stores item quantity in each heap
