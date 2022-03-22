@@ -1,0 +1,107 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url("img/nazare.jpg");
+  background-size: cover;
+  font-family: fantasy;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#modal {
+  max-height: 90%;
+}
+
+h4,
+.game-title {
+  font-family: fantasy;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 15px 6px #000;
+}
+
+a {
+  margin: 0 5px;
+}
+
+.page-footer {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  min-height: 50vh;
+  margin-top: 10%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.heap-one,
+.heap-two,
+.heap-three {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.item {
+  margin: .5em;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: 5px 10px 18px #000;
+}
+
+.button-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch-player,
+.game-mode {
+  border-radius: 10px;
+  background-color: #0008ff;
+}
+
+.reminder-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.reminder-msg {
+  padding: 0.25em;
+  border-radius: 0.5em;
+  background-color: rgba(255, 255, 255, 0.7); 
+}
+
+.logo {
+  width: 25px;
+  height: 25px;
+  filter: invert(100%);
+}
+
+.win-msg {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  color: #222;
+  padding: 10px;
+}
+
+.instructions {
+  margin: 5%;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+}
