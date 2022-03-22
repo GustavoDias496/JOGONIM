@@ -121,39 +121,44 @@ var aiComputeMove = function() {
     itemsToRemove["heap-index"] = maxHeapIndex;
 
     if(numHeaps % 2 === 1) {
-      // leave one item in the heap to make odd number of 1-item heaps remaining
+
+      
       itemsToRemove["quantity"] = maxHeap - 1;
     } else {
-      // remove the whole heap if an even num of heaps remains
+
+      
       itemsToRemove["quantity"] = maxHeap;
     }
     return itemsToRemove;
   }
 
-  // reduce method with exponential returns the binary digital sum!
+  
   var binarySum = heapArray.reduce(function(x, y) { return x^y;});
 
-  // get nim sums of each heap and the binarySum
+
+  
   var heapSums = heapArray.map(function(heapSize) {return heapSize ^ binarySum});
 
-  // check if any of the individual heap sums are smaller than the heap
+
+  
   for(let i = 0; i < heapSums.length; i++) {
     if(heapSums[i] < heapArray[i]) {
       itemsToRemove["heap-index"] = i;
       itemsToRemove["quantity"] = heapArray[i] - heapSums[i]; 
-      // check for case where next move reduces to all heap sizes of 1
+
+      
       var move = 'Move: Take ' + (heapArray[i] - heapSums[i]) + ' from heap ' + (i+1);
     } else {
       var index = heapArray.indexOf(Math.max(...heapArray)) + 1;
     }
   }
 
-  // if no useful move found (e.g. the nim sum is zero), just remove 1 from largest heap
+
+  
   if(!itemsToRemove["quantity"]) {
     itemsToRemove["heap-index"] = heapArray.indexOf(Math.max(...heapArray));
     itemsToRemove["quantity"] = 1; 
   }
-
   return itemsToRemove;
 }
 
