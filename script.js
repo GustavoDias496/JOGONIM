@@ -71,7 +71,8 @@ var runWinSequence = function() {
       $('.heap-two').hide();
       
       console.log("player is: ", player);
-      // if either human player won, display their name, otherwise show the ai brain image
+
+      
       if(player === 1 || player === 2 && aiMode === false) {
         $('.heap-two').append("<h3 class='win-msg'>" + playerName + " wins!</h3>");
       } else {
