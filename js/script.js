@@ -291,7 +291,7 @@ var removeItem = function() {
 
   } else {
 
-    M.toast({html: 'You may only remove items from one heap!', classes: 'rounded'});
+    M.toast({html: 'Remova itens apenas de uma coluna!', classes: 'rounded'});
   }
 };
 
