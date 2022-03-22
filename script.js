@@ -1,6 +1,6 @@
 var aiMode = false;         // whether computer mode is enabled
-var player = 1;             // tracks current player (1 or 2...2 is also computer)
-var itemRemoved = false;    // tracks whether player has made an initial move
+var player = 1;             
+var itemRemoved = false;
 var selectedHeap = null; 
 var reminderTimeout = null;
 var gameOver = false;       
@@ -29,8 +29,6 @@ var initGame = function() {
 };
 
 var resetGame = function() {
-
-  
   $('h3').remove();
   $('.brain').remove();
   $('.item').show();
@@ -50,10 +48,8 @@ var resetGame = function() {
 };
 
 var runWinSequence = function() {
-  // disable player switching buttons since game is over
   $('.switch-player').addClass('disabled');
 
-  // close reminder message since game is over
   $('.reminder-msg').hide();
   clearTimeout(reminderTimeout);
 
