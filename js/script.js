@@ -221,7 +221,7 @@ var switchPlayer = function() {
   clearTimeout(reminderTimeout);
   console.log("itemRemoved= ", itemRemoved);
   if(!itemRemoved) {
-    M.toast({html: 'Você precisa remover pelo menos um item!', classes: 'rounded'});
+    M.toast({html: 'Remova um item!', classes: 'rounded'});
   } else {
 
 
@@ -291,7 +291,7 @@ var removeItem = function() {
 
   } else {
 
-    M.toast({html: 'Remova itens apenas de uma coluna!', classes: 'rounded'});
+    M.toast({html: 'Retire somente da coluna!', classes: 'rounded'});
   }
 };
 
