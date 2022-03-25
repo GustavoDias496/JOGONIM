@@ -1,0 +1,59 @@
+body{
+background-image: url("../img/memenazare.jpg");
+}
+
+main{
+  background:rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter:blur(11px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 300px;
+  margin-right: 300px;
+  border-radius: 16px;
+}
+.titleName{
+  font-family: fantasy;
+  text-align: center;
+}
+
+.reiniciar{
+  border-radius: 7px;
+  padding: 4px;
+}
+
+.button{
+  border-radius: 7px;
+  padding: 4px;
+  margin:11px;
+}
+
+.text{
+  font-family: fantasy;
+  text-align: center;
+}
+
+#radio{
+	align-items: center;
+	flexbox:  center;
+}
+
+.salvenc{
+	align-items: center;
+	flexbox: center;
+}
+
+#labelJogador{
+	font-size: 25px;
+	margin-left: 3vh;
+	margin-right: 2vh;
+}
+
+#veez{
+	font-size: 40px;
+	margin-left: 3vh;
+	margin-right: 2vh;
+}

@@ -1,67 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head> 
-  <title>Jogo Nim</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  <link rel="stylesheet" href="./css/styles.css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NIM</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <h4>Nim</h4>
-      <p>NIM é um jogo de estratégia matemática, na qual os jogadores se revezam removendo quantos itens quiserem de uma única coluna. O jogador que deixou de remover o último item perde!</p>
-      <p>Modo de jogo:</p>
-      <button class="btn game-mode two-player">Dois Jogadores</button><br><br>
-      <button class="btn game-mode computer">Contra a máquina</button><br><br>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect btn-flat">Jogar</a>
-    </div>
+  <br><br><br><br><br><br><br><br><br>
+  <main>
+  <div class="titleName">
+    <h1> JOGO NIM </h1>
+  </div>       
+<!-- caixa de texto para receber o valor de vez -->
+
+  <div class="text">
+  <form>
+    <label id="labelJogador">Player 2</label>
+    <input type="text" id="vez" class="caixa">
+  </form>
   </div>
-  <nav>
-    <div class="nav-wrapper">
-      <a class="brand-logo center game-title">Nim</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="reset">Jogar outra vez</a></li>
-        <li><a href="index.html">Modo de Jogo</a></li>
-      </ul>
-    </div>
-  </nav>
-  <main class="container">
-    <div class="gameboard">
-      <div class="heap-one" id="heap-one">
-        <div class="item blue-grey lighten-3" id="h1-1"></div>
-        <div class="item blue-grey lighten-3" id="h1-2"></div>
-        <div class="item blue-grey lighten-3" id="h1-3"></div>
-      </div>
-      <div class="heap-two" id="heap-two">
-        <div class="item blue-grey" id="h2-1"></div>
-        <div class="item blue-grey" id="h2-2"></div>
-        <div class="item blue-grey" id="h2-3"></div>
-        <div class="item blue-grey" id="h2-4"></div>
-        <div class="item blue-grey" id="h2-5"></div> 
-      </div>     
-      <div class="heap-three" id="heap-three">
-        <div class="item blue-grey darken-3" id="h3-1"></div>
-        <div class="item blue-grey darken-3" id="h3-2"></div>
-        <div class="item blue-grey darken-3" id="h3-3"></div>
-        <div class="item blue-grey darken-3" id="h3-4"></div>
-        <div class="item blue-grey darken-3" id="h3-5"></div>
-        <div class="item blue-grey darken-3" id="h3-6"></div>
-        <div class="item blue-grey darken-3" id="h3-7"></div>
-      </div>
-    </div>
-    <div class="button-panel">
-      <h5 class="waves-effect waves-light btn-large switch-player flow-text" id="player-one">Jogador 1</h5>
-      <h5 class="waves-effect waves-light btn-large disabled switch-player flow-text" id="player-two">Jogador 2</h5>
-    </div>
-    <div class="reminder-container">
-      <h5 class="reminder-msg">Clique no seu icone para finalizar sua jogada.</h5>
+<!-- script para pegar o valor da caixa de texto-->
+        <script >
+                document.getElementById('vez');
+            </script>
+
+<!-- js do botão ENVIAR-->
+              <button class="button" type="button" onclick="jogadaPlayer()">Enviar</button>
+
+<!--tentativa de colocar o valor total das jogadas na tela-->
+  <br>
+  <label id="veez"> 21 </label>
+
+            <script >
+                document.getElementById('veez');
+            </script>
+    
+<!-- js do botão RENINICIAR-->
+    <form>
+        <a href="index.html">
+         <input class="reiniciar" type="button" value="Reiniciar">
+        </a>
+    </form>
+    <br>
+
+<!-- modal para avisar que o botão funciona -->
+  <script>
+      function Evento(){
+         alert('Tentativa feita!')
+      }
+  </script>
+    <div id="retiraNum">  
+    <!-- testar para ver se passa o valor da jogada -->
     </div>
   </main>
-  <script src="js/script.js"></script>
-</body>
+    <script src="js/scrip.js"></script>
+  </body>
 </html>
