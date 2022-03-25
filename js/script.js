@@ -11,7 +11,7 @@ usu2=document.getElementById(usu2);
 numT=21;
 // valores incluídos para teste
 
-function jogadaPlayer(){
+function jogadaPlayer(){ //define de quem é a vez de jogar e pontuar
 	if(document.getElementById("vez").value != ""){
 		if(vezJogada == 1){
 			document.getElementById("labelJogador").textContent = 'PLAYER 1';
@@ -26,7 +26,7 @@ function jogadaPlayer(){
 			console.log(document.getElementById("vez").value);
 			
 
-			vezJogada = 1; // tava embaixo e coloquei em cima para pegar o jogador certo
+			vezJogada = 1; //apresenta o jogador correto
 			limJ();
 			document.getElementById("vez").value=""	
 		}
