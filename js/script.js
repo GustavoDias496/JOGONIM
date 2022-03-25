@@ -32,6 +32,7 @@ function jogadaPlayer(){
 		}
 	}
 }
+//Define limite do valor da partida  
 
 function limJ(){
 
