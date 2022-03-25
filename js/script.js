@@ -43,7 +43,7 @@ function limJ(){
 		 alert('Jogue um valor dentro do limite! Tem que ser menor que 21 e maior que 0!');
 		}
 }
-
+// A função limiteN vai 
 function limiteN(){ 
 		
 		console.log(numT= numT-document.getElementById("vez").value);
